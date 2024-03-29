@@ -27,8 +27,8 @@ const ragManager = require("./rag");
 
 // health check API route: if this doesn't return 200, the server is down :(
 router.get("/health", (_req, res) => {
-    res.status(200);
-    res.send({});
+  res.status(200);
+  res.send({});
 });
 
 router.get("/stories", (req, res) => {
@@ -74,10 +74,11 @@ router.get("/whoami", (req, res) => {
   res.send(req.user);
 });
 
-router.get("/user", (req, res) => {
-  User.findById(req.query.userid).then((user) => {
-    res.send(user);
-  });
+router.get("/user", (req, res, next) => {
+  if (req.user) {
+    return res.send(req.user);
+  }
+  res.status(400).send({});
 });
 
 router.post("/initsocket", (req, res) => {

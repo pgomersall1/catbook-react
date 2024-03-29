@@ -11,7 +11,11 @@ const Profile = (props) => {
 
   useEffect(() => {
     document.title = "Profile Page";
-    get(`/api/user`, { userid: props.userId }).then((userObj) => setUser(userObj));
+    get(`/api/user`, { userid: props.userId })
+      .then((userObj) => setUser(userObj))
+      .catch((_) => {
+        window.location.href = "/";
+      });
   }, []);
 
   const incrementCatHappiness = () => {
