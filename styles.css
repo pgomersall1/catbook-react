@@ -3,11 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600");
 
 :root {
-  --primary: #396dff;
+  --primary: #000;
   --grey: #f7f7f7;
   --white: #fff;
 
-  --xs: 4px;
   --s: 8px;
   --m: 16px;
   --l: 24px;
@@ -16,6 +15,15 @@
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  color: var(--white);
+}
+
+.landing-container{
+  background-image: url("wavey-fingerprint.svg");
+}
+
+.landing-container2{
+  background-image: url("bermuda-traingle.png");
 }
 
 .u-flex {
@@ -39,6 +47,10 @@ body {
   font-weight: normal;
 }
 
+.spacer {
+  margin-right: 20px; /* Adjust the spacing as needed */
+}
+
 .avatarContainer {
   padding: 0 35%;
 }
@@ -56,11 +68,36 @@ body {
   border-radius: 50%;
 
   /* Add image */
-  background-image: url("cat.png");
+  background-image: url("profile pic.png");
 
   /* Centering on image`s center*/
   background-position-y: center;
-  background-position-x: center;
+  background-position-x: calc(50% + 20px); /* Adjust the 10px value as needed */
+  background-repeat: no-repeat;
+
+  /* it makes the clue thing, takes smaller dimension to fill div */
+  background-size: cover;
+
+  /* it is optional, for making this div centered in parent*/
+  margin: 0 auto;
+}
+
+.avatar2 {
+  /* make it responsive */
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  /* div height to be the same as width*/
+  padding-top: 100%;
+  height: 200px; 
+
+  /* Add image */
+  background-image: url("TorreyGolf2.jpg");
+
+  /* Centering on image`s center*/
+  background-position-y: 50%; /* Adjust the vertical position */
+  background-position-x: calc(50% + 20px); /* Adjust the 10px value as needed */
   background-repeat: no-repeat;
 
   /* it makes the clue thing, takes smaller dimension to fill div */
